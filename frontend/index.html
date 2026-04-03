@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TrendPulse | Triple Platform Preview</title>
+
+<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+<header class="app-header">
+<h1>TrendPulse <span>| Cluster Visualization</span></h1>
+</header>
+
+<div class="triple-container">
+
+<section class="feed-column twitter">
+<div class="col-header"><i class="fab fa-twitter"></i> Twitter Feed</div>
+<div class="scroll-area" id="twitterFeed"></div>
+</section>
+
+<section class="feed-column facebook">
+<div class="col-header"><i class="fab fa-facebook-f"></i> Facebook Feed</div>
+<div class="scroll-area" id="facebookFeed"></div>
+</section>
+
+<section class="feed-column instagram">
+<div class="col-header"><i class="fab fa-instagram"></i> Instagram Feed</div>
+<div class="scroll-area" id="instagramFeed"></div>
+</section>
+
+</div>
+
+<script>
+
+fetch('trending.json?' + new Date().getTime())
+.then(res => res.json())
+.then(data => {
+
+    const feeds = {
+    "Twitter": document.getElementById("twitterFeed"),
+    "Facebook": document.getElementById("facebookFeed"),
+    "Instagram": document.getElementById("instagramFeed")
+};
+
+    const counts = { Twitter:0, Facebook:0, Instagram:0 };
+
+    data.forEach(post => {
+
+        if (counts[post.platform] >= 10) return;
+
+        const card = document.createElement("div");
+
+        // Highlight top 3 as trending
+        if (counts[post.platform] < 3)
+            card.className = "post-card trending";
+        else
+            card.className = "post-card";
+
+        // ✅ FIXED CLICK BEHAVIOR (only one open at a time)
+        card.onclick = () => {
+
+            const isExpanded = card.classList.contains("expanded");
+
+            // Close all cards
+            document.querySelectorAll(".post-card.expanded")
+                .forEach(c => c.classList.remove("expanded"));
+
+            // Open only if it was not already open
+            if (!isExpanded) {
+                card.classList.add("expanded");
+            }
+        };
+
+        card.innerHTML = `
+            <div class="post-title">${post.post_content}</div>
+            <div class="post-description">${post.description}</div>
+        `;
+
+        feeds[post.platform].appendChild(card);
+        counts[post.platform]++;
+    });
+
+});
+
+</script>
+
+</body>
+</html>

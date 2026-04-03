@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    font-family: 'Segoe UI', sans-serif;
+    color: #eee;
+    overflow: hidden;
+}
+
+/* ===== Header ===== */
+
+.app-header { 
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: linear-gradient(90deg, #620756, #7029c0, #b752d6);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Highlight text */
+
+.app-header span { 
+    color: #38bdf8; 
+    margin-left: 10px; 
+    font-weight: 600;
+}
+
+.app-header span { 
+    color: #38bdf8; 
+    margin-left: 10px; 
+}
+
+/* ===== Layout ===== */
+
+.triple-container {
+    display: flex;
+    height: calc(100vh - 61px);
+    padding: 15px;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.feed-column {
+    flex: 1;
+    background: #ffffff00;
+    backdrop-filter: blur(15px);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+
+/* ===== Column Header ===== */
+
+.col-header { 
+    padding: 15px; 
+    font-weight: bold; 
+    text-align: center; 
+    color: white;
+    letter-spacing: 1px;
+}
+
+.twitter .col-header { background: linear-gradient(90deg, #38bdf8, #0ea5e9); }
+.facebook .col-header { background: linear-gradient(90deg, #6366f1, #4338ca); }
+.instagram .col-header { background: linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6); }
+
+/* ===== Scroll Area ===== */
+
+.scroll-area { 
+    padding: 15px; 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ===== Post Card ===== */
+
+.post-card {
+    padding: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    /* ✅ FIXES */
+    height: auto;
+    min-height: fit-content;
+}
+
+/* Glow border */
+
+.post-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+}
+
+/* ===== Platform Card Colors ===== */
+
+.feed-column.twitter .post-card {
+    background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(14,165,233,0.15));
+    color: #e0f7ff;
+}
+
+.feed-column.facebook .post-card {
+    background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(67,56,202,0.15));
+    color: #e0e7ff;
+}
+
+.feed-column.instagram .post-card {
+    background: linear-gradient(135deg, rgba(245,158,11,0.25), rgba(236,72,153,0.2), rgba(139,92,246,0.2));
+    color: #ffffff;
+}
+
+/* ===== Hover ===== */
+
+.post-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* ===== Trending ===== */
+
+.post-card.trending {
+    border: 2px solid #facc15;
+    box-shadow: 0 0 12px #facc15;
+}
+
+/* ===== Title ===== */
+
+.post-title {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
+
+    /* ✅ FIX TEXT CUT */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* ===== Description ===== */
+
+.post-description {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+
+    /* ✅ FIX TEXT CUT */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* ===== Expand ===== */
+
+.post-card.expanded .post-description {
+    display: block;
+}
+
+.post-card.expanded {
+    transform: scale(1.02);
+}
