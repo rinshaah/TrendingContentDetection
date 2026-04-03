@@ -37,7 +37,7 @@ Trending_Content_Detection_ML/\
 ├── src/ # ML algorithms\
 ├── data/ # Engagement datasets\
 ├── frontend/ # UI files\
-├── images/ # Diagrams & outputs\
+├── images/ # Diagrams & outputs
 
 
 ---
