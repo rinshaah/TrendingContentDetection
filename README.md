@@ -11,7 +11,7 @@ With the rapid growth of social media, identifying trending content is crucial. 
 
 <p align="center">
   <img src="images/feed.png" width="600"/><br>
-  <em>Clustering Results</em>
+  <em>Example for a social media feed</em>
 </p>
 
 ---
@@ -55,7 +55,12 @@ Trending_Content_Detection_ML/\
 3. Applying weightages
 4. K-Means clustering  
 5. Identify trending cluster  
-6. Rank posts based on engagement + recency  
+6. Rank posts based on engagement + recency  <br>
+
+<p align="center">
+  <img src="images/clustering.png" width="600"/><br>
+  <em>Clustering approach</em>
+</p>
 
 ---
 
@@ -63,8 +68,13 @@ Trending_Content_Detection_ML/\
 
 - Successfully grouped posts into clusters  
 - Identified trending content dynamically  
-- Achieved efficient performance with low computational cost  
+- Achieved efficient performance with low computational cost<br>  
 
+<p align="center">
+  <img src="images/visual.png" width="600"/><br>
+  <em> Frontend interface displaying the final ranked trending content to the
+user</em>
+</p>
 ---
 
 ##  Future Improvements
