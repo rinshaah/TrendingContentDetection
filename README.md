@@ -59,7 +59,7 @@ Trending_Content_Detection_ML/\
 
 <p align="center">
   <img src="images/clustering.png" width="300"/>
-  <img src="images/block diagram.png" width="500"/>
+  <img src="images/block_diagram.png" width="500"/>
   <em>Clustering approach</em>
 </p>
 
