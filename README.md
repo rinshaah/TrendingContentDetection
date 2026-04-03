@@ -35,9 +35,9 @@ With the rapid growth of social media, identifying trending content is crucial. 
 Trending_Content_Detection_ML/\
 │\
 ├── src/ # ML algorithms\
-├── data/ # Engagement datasets
-├── frontend/ # UI files
-├── images/ # Diagrams & outputs
+├── data/ # Engagement datasets\
+├── frontend/ # UI files\
+├── images/ # Diagrams & outputs\
 
 
 ---
