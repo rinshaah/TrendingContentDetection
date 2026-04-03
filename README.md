@@ -6,10 +6,14 @@ This project implements an unsupervised machine learning system to detect trendi
 
 ##  Project Overview
 
-With the rapid growth of social media, identifying trending content is crucial. This system uses **K-Means clustering** to group posts based on engagement patterns and automatically detect trending posts.\
+With the rapid growth of social media, identifying trending content is crucial. This system uses **K-Means clustering** to group posts based on engagement patterns and automatically detect trending posts.<br>
 
 
-![Clustering](images/feed.png)
+<p align="center">
+  <img src="images/feed.png" width="600"/><br>
+  <em>Clustering Results</em>
+</p>
+
 ---
 
 ##  Features
