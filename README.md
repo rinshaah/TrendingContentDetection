@@ -58,7 +58,8 @@ Trending_Content_Detection_ML/\
 6. Rank posts based on engagement + recency  <br>
 
 <p align="center">
-  <img src="images/clustering.png" width="300"/><br>
+  <img src="images/clustering.png" width="300"/>
+  <img src="images/block diagram.png" width="500"/>
   <em>Clustering approach</em>
 </p>
 
