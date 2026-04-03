@@ -32,9 +32,9 @@ With the rapid growth of social media, identifying trending content is crucial. 
 
 ##  Project Structure
 
-Trending_Content_Detection_ML/
-│
-├── src/ # ML algorithms
+Trending_Content_Detection_ML/\
+│\
+├── src/ # ML algorithms\
 ├── data/ # Engagement datasets
 ├── frontend/ # UI files
 ├── images/ # Diagrams & outputs
